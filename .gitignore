@@ -10,7 +10,7 @@ out/
 cache/
 
 # Foundry dependencies (298 MB — installed via `forge install`)
-lib/
+/lib/
 
 # ── Node / Next.js ─────────────────────────────────────────────────────────────
 frontend/node_modules/
