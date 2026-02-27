@@ -1,0 +1,58 @@
+{
+  "0x1064fb316b88f0464bff4dd7234fcbe18df246d9": {
+    "description": "True Network aims to create a distributed knowledge graph powered by AI agents to enhance innovation and problem-solving capabilities. By enabling individuals with specialized knowledge to contribute to this network, it seeks to generate tailored insights and insights across domains while preserving user privacy.",
+    "website": "",
+    "twitter": "",
+    "telegram": "",
+    "discord": "",
+    "linkedin": "",
+    "aiSummary": "True Network aims to create a distributed knowledge graph powered by AI agents to enhance innovation and problem-solving capabilities. By enabling individuals with specialized knowledge to contribute to this network, it seeks to generate tailored insights and insights across domains while preserving user privacy.",
+    "industry": "AI/Knowledge Management",
+    "businessModel": "The company operates on a pay-per-token model where the value derived from queries is distributed among specialized agents and evaluators, with a share allocated to the protocol for development and operational costs.",
+    "keyHighlights": [
+      "Proof of concept demonstrating system speed and functionality",
+      "Ability to generate high-quality, specialized insights for users",
+      "Engages a vast pool of potential knowledge providers, including millions of PhD holders",
+      "Privacy-preserving mechanisms ensuring user data security",
+      "Projected growth in the agentic AI market from $5B to over $180B by 2030"
+    ],
+    "riskFactors": [
+      "Challenges in managing the speed of multiple concurrent agents",
+      "Increasing costs associated with the inference of multiple agents",
+      "Potential issues surrounding user trust and data privacy"
+    ],
+    "teamInfo": "",
+    "documentName": "Distributed Knowledge Graph True Network v2 Vision.pdf",
+    "tokenAddress": "0x1064fb316b88f0464bff4dd7234fcbe18df246d9",
+    "createdAt": "2026-02-27T18:48:04.249Z",
+    "updatedAt": "2026-02-27T18:48:04.249Z"
+  },
+  "0x8a3f244786ce78f2c7f1ed458d91077999865643": {
+    "description": "Founders at Work is a collection of interviews with the founders of successful startups, providing insights into their early days and the challenges they faced. The book aims to showcase the real productivity and innovative spirit of startups, contrasting them with conventional corporate culture.",
+    "website": "",
+    "twitter": "",
+    "telegram": "",
+    "discord": "",
+    "linkedin": "",
+    "aiSummary": "Founders at Work is a collection of interviews with the founders of successful startups, providing insights into their early days and the challenges they faced. The book aims to showcase the real productivity and innovative spirit of startups, contrasting them with conventional corporate culture.",
+    "industry": "Publishing",
+    "businessModel": "The company generates revenue through book sales and potentially through speaking engagements and workshops derived from the insights shared in the interviews.",
+    "keyHighlights": [
+      "Interviews with prominent startup founders",
+      "Insights into early startup challenges and successes",
+      "Focus on authentic startup culture",
+      "Contrasts conventional corporate norms",
+      "Aims to inspire future entrepreneurs"
+    ],
+    "riskFactors": [
+      "Changing interests in startup literature",
+      "Competition from online resources",
+      "Dependency on the popularity of startup culture"
+    ],
+    "teamInfo": "The book is authored by Jessica Livingston, who is a co-founder of Y Combinator, a well-known startup accelerator.",
+    "documentName": "Founders At Work - Stories of Startups Early Days - Jessica Livingston.pdf",
+    "tokenAddress": "0x8a3f244786ce78f2c7f1ed458d91077999865643",
+    "createdAt": "2026-02-27T22:36:08.270Z",
+    "updatedAt": "2026-02-27T22:36:08.270Z"
+  }
+}
