@@ -20,7 +20,7 @@
 12. [Fee Distribution (LP vs Treasury)](#12-fee-distribution-lp-vs-treasury)
 13. [Atomic Token Deployment (EquityFactory)](#13-atomic-token-deployment-equityfactory)
 14. [Security Patterns](#14-security-patterns)
-15. [opBNB-Specific Choices](#15-opbnb-specific-choices)
+15. [BSC Testnet-Specific Choices](#15-bsc-testnet-specific-choices)
 
 ---
 
@@ -346,9 +346,9 @@ This runs at the **start** of every `buyTokens`/`sellTokens` call, before any co
 ### Why a Window?
 The circuit breaker needs a **reference price** to measure deviation against. Without a time-bound reference, the first trade of a token that has been dormant for a month would be measured against a stale price — potentially triggering the circuit on legitimate trading.
 
-On opBNB, blocks are produced roughly every ~1 second, so:
+On BSC Testnet, blocks are produced roughly every ~3 seconds, so:
 ```solidity
-uint256 public constant WINDOW_BLOCKS = 86_400; // 24h × 3600s/h × 1 block/s
+uint256 public constant WINDOW_BLOCKS = 28_800; // 24h × 3600s/h ÷ 3s/block
 ```
 
 ### Reset Logic
@@ -385,9 +385,9 @@ Hold < 6 months  → 0.45% fee on sell (45 basis points)
 Hold ≥ 6 months  → 0.02% fee on sell  (2 basis points)
 ```
 
-On opBNB (~1 block/second):
+On BSC Testnet (~3 seconds/block):
 ```solidity
-uint256 public constant SHORT_TERM_BLOCKS = 15_552_000; // 180 days × 86,400 blocks/day
+uint256 public constant SHORT_TERM_BLOCKS = 5_184_000; // 180 days × 86,400 s/day ÷ 3 s/block
 ```
 
 ### Weighted-Average Acquisition Block
@@ -614,29 +614,31 @@ function _sendBnb(address to, uint256 amount) internal {
 
 ---
 
-## 15. opBNB-Specific Choices
+## 15. BSC Testnet-Specific Choices
 
 | Choice | Reason |
 |--------|--------|
 | **Native BNB as base currency** | No WBNB wrapping needed. Lower gas. Familiar to BNB ecosystem users. |
-| **`WINDOW_BLOCKS = 86_400`** | opBNB produces ~1 block/second. 86,400 blocks ≈ exactly 24 hours. |
-| **`SHORT_TERM_BLOCKS = 15,552,000`** | 180 days × 86,400 blocks/day. The 6-month holding threshold for the discounted fee. |
-| **`circuitHaltBlocks = 100`** | Default ~100 seconds halt. Configurable per token. On a faster chain this would be proportionally adjusted. |
-| **No V4 hooks** | Neither Uniswap V4 nor PancakeSwap Infinity is deployed on opBNB. Custom AMM gives full control and no external dependency. Architecture is hook-friendly for future migration. |
-| **`evm_version = "prague"`** | Solidity 0.8.24 compatibility with Foundry nightly. opBNB supports EVM opcodes up to shanghai/cancun. |
-| **Constant-product over CLMM** | Simpler, auditable, requires no tick management. Appropriate for the MVP; can migrate to concentrated liquidity (hook-based) later. |
+| **`WINDOW_BLOCKS = 28_800`** | BSC Testnet produces ~1 block/3 seconds. 28,800 blocks × 3 s = 86,400 s = exactly 24 hours. |
+| **`SHORT_TERM_BLOCKS = 5_184_000`** | 180 days × 86,400 s/day ÷ 3 s/block = 5,184,000 blocks. The 6-month holding threshold for the discounted fee. |
+| **`circuitHaltBlocks = 100`** | Default ~300 seconds halt (100 blocks × 3 s). Configurable per token at listing time. |
+| **No V4 hooks** | PancakeSwap v4 is not yet widely deployed on BSC Testnet. Custom AMM gives full protocol control and zero external dependency. Architecture is hook-friendly for future migration. |
+| **`evm_version = "paris"`** | Solidity 0.8.24 targeting BSC Testnet EVM compatibility (Shanghai-equivalent). |
+| **Constant-product over CLMM** | Simpler, auditable, requires no tick management. Appropriate for the MVP; can migrate to concentrated liquidity later. |
 
 ---
 
-## Contract Addresses (opBNB Testnet)
+## Contract Addresses (BSC Testnet — Chain 97)
 
-> Populated after deployment. Run `forge script script/Deploy.s.sol --rpc-url opbnb_testnet --broadcast`.
+> Live deployment. Verify on [BSCScan Testnet](https://testnet.bscscan.com).
+>
+> To redeploy: `source .env && forge script script/Deploy.s.sol --rpc-url bsc_testnet --broadcast -vvvv`
 
-| Contract | Address |
-|----------|---------|
-| KYCRegistry | `TBD` |
-| EquityExchange | `TBD` |
-| EquityFactory | `TBD` |
+| Contract | Address | Explorer |
+|----------|---------|---------|
+| **KYCRegistry** | `0x7199Ab4BD12EaaB852B1BeDBAd364dFD2e38a1e7` | [BSCScan ↗](https://testnet.bscscan.com/address/0x7199Ab4BD12EaaB852B1BeDBAd364dFD2e38a1e7) |
+| **EquityExchange** | `0x34740D0bE3996A08AeC9A0d33A26Ae9cA21028cF` | [BSCScan ↗](https://testnet.bscscan.com/address/0x34740D0bE3996A08AeC9A0d33A26Ae9cA21028cF) |
+| **EquityFactory** | `0xEA71916C6287991A1045F32E13137fc16EF91149` | [BSCScan ↗](https://testnet.bscscan.com/address/0xEA71916C6287991A1045F32E13137fc16EF91149) |
 
 ---
 
