@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #f4f5f7;
+  --color-foreground: #111827;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  /* Groww brand green */
+  --color-brand-50: #e6faf5;
+  --color-brand-100: #b3f0e3;
+  --color-brand-200: #80e7d1;
+  --color-brand-300: #4ddebf;
+  --color-brand-400: #26c9a8;
+  --color-brand-500: #00b386;
+  --color-brand-600: #009973;
+  --color-brand-700: #007a5c;
+  --color-brand-800: #005c45;
+  --color-brand-900: #003d2e;
+}
+
+:root {
+  color-scheme: light;
+  --background: #f4f5f7;
+  --foreground: #111827;
+}
+
+html {
+  background-color: #f4f5f7;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f4f5f7;
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Thin scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #f3f4f6; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
+
+/* Smooth transitions for interactive elements */
+button, a { transition: all 0.15s ease; }
