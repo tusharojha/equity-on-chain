@@ -1,0 +1,37 @@
+# ── Environment & secrets ──────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+frontend/.env.local
+frontend/.env.*.local
+
+# ── Foundry build artifacts ────────────────────────────────────────────────────
+out/
+cache/
+
+# Foundry dependencies (298 MB — installed via `forge install`)
+lib/
+
+# ── Node / Next.js ─────────────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+frontend/tsconfig.tsbuildinfo
+
+# ── macOS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# ── Editor & tooling ───────────────────────────────────────────────────────────
+.claude/
+.vscode/
+*.code-workspace
+.idea/
+
+# ── Misc ───────────────────────────────────────────────────────────────────────
+*.pdf
+*.log
+*.tmp
