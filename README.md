@@ -33,9 +33,6 @@ A founder who wants to raise capital today faces a brutal gauntlet:
 
 India has **63+ million registered businesses**. Fewer than **5,500** are listed on public exchanges. The other 99.99% either bootstrap indefinitely, hand over control to VCs, or never scale.
 
-> *"The cost and complexity of public listings is the single largest barrier to startup capital formation."*
-> — SEBI Consultation Paper on Regulatory Framework for Startup Listing
-
 The investors lose too. Retail investors can only participate in a company's growth **after** the most value-accretive early phase has already been captured by institutions. By the time a company IPOs, the 100x has already happened — in a private round no ordinary person could access.
 
 ---
