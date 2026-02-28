@@ -55,6 +55,12 @@
 
 **Contract addresses are the protocol's anchors.** The exchange address is stored in the token's `_whitelistedExchanges` mapping; the KYC provider address is stored in the token's `Config` struct. All relationships are on-chain and verifiable.
 
+### Original Architecture Sketch
+
+The hand-drawn diagram below shows the three-layer design as originally conceived — equity token regulations → AMM exchange logic → frontend abstraction — and the `approve` / `transferFrom` handshake between the token and exchange contracts.
+
+![EquityOnChain Architecture](frontend/public/arch.jpg)
+
 ---
 
 ## 2. Non-Transferable Equity Tokens
